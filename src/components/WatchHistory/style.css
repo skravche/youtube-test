@@ -1,0 +1,16 @@
+.watched-hisory {
+  border: 1px solid lightgrey;
+  border-radius: 3px;
+  min-width: 200px;
+  min-height: 100%;
+  padding: 20px;
+  margin: 0 5px 0 10px;
+  font-size: 10px;
+}
+.story-item {
+  display: flex;
+}
+button {
+  max-height: 18px;
+  margin: 0px 10px;
+}
