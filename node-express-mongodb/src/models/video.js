@@ -5,7 +5,7 @@ const Video = mongoose.model(
   new mongoose.Schema({
     id: String,
     title: String,
-    description: String,
+    played: Boolean,
   }),
 );
 

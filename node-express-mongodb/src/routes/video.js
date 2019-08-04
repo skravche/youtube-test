@@ -6,7 +6,7 @@ const getVideos = async req => {
     _id: 0,
     id: 1,
     title: 1,
-    description: 1,
+    played: 1,
   });
 };
 
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
   const video = await req.context.models.Video.create({
     id: req.body.id,
     title: req.body.title,
-    description: req.body.description,
+    played: req.body.played,
   });
 
   return res.send(video);

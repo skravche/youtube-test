@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getVideos, addVideo, delVideo, remove } from '../../api';
+import { getVideos, remove } from '../../api';
 import './style.css';
 
 class WacthHistory extends Component {
@@ -8,7 +8,7 @@ class WacthHistory extends Component {
     this.state = {
       items: [],
       isLoaded: false,
-      isToggleOn: true,
+      // played: false,
     };
   }
 
@@ -28,9 +28,10 @@ class WacthHistory extends Component {
       });
   }
 
-  handleClick = (id) => {
+  handleClick = id => {
+    console.log(id);
     remove(id);
-  }
+  };
 
   render() {
     const { isLoaded, items } = this.state;
@@ -41,9 +42,14 @@ class WacthHistory extends Component {
       return (
         <div className="watched-hisory">
           {items.map(item => (
-            <div className='story-item' key={item.id}>
+            <div className="story-item" key={item.id}>
               <p>{item.title}</p>
-              <button onClick={this.handleClick}>Delete</button>
+              <p>{item.id}</p>
+
+              <p>{JSON.stringify(item.played)}</p>
+              <button value={item.id} onClick={this.handleClick}>
+                Delete
+              </button>
             </div>
           ))}
         </div>
